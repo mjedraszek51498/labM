@@ -1,0 +1,9 @@
+.task.completed .title{
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task.completed .deadline{
+  text-decoration: line-through;
+  opacity: 0.6;
+}

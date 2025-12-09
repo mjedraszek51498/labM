@@ -1,0 +1,18 @@
+
+
+footer {
+  background-color: mediumseagreen;
+  padding: 10px;
+  font-size: 14px;
+  color: white;
+  border-radius: 5px;
+}
+
+
+header {
+  border-radius: 5px;
+  background-color: #13138e;
+  padding: 10px;
+  font-size: 18px;
+  color: white;
+}
