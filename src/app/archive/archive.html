@@ -10,7 +10,9 @@
                 }
             </div>
           <div class="action">
-            <button (click)="delete(task)">Delete</button>
+            <button mat-icon-button (click)="delete(task)">
+              <mat-icon>delete</mat-icon>
+            </button>
           </div>
         </div>
     }

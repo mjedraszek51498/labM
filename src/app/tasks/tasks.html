@@ -1,16 +1,19 @@
 <div class="container">
   <form class = "new-tasks">
+    <mat-form-field>
+      <mat-label>Tiltle</mat-label>
+      <input matInput type="text" [(ngModel)]="newTask.title" name="title" [disabled]="isProcessing"/>
+      <mat-hint>Enter at least 1 character.</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>deadline</mat-label>
+      <input matInput type="text" [(ngModel)]="newTask.deadline" name="deadline" [disabled]="isProcessing"/>
+      <mat-hint>Spec date is optional</mat-hint>
+    </mat-form-field>
+
     <div class="form-group">
-      <label for="title">Title</label>
-      <input type="text" id="title" name="title" [(ngModel)]="newTask.title" class="form-control" [disabled]="isProcessing" />
-    </div>
-    <div class="form-group">
-      <label for="deadline">Deadline</label>
-      <input type="date" id="deadline" name="deadline" [(ngModel)]="newTask.deadline" class="form-control" [disabled]="isProcessing" />
-    </div>
-    <div class="form-group">
-      <button type="button" class="btn btn-primary" (click)="addTask()" [disabled]="isProcessing">
-        {{ isProcessing ? 'Adding...' : 'Add Task' }}
+      <button matButton="outlined" (click)="addTask()" [disabled]="!canAddTask()">
+       Add Task
       </button>
     </div>
   </form>
@@ -24,12 +27,12 @@
           }
         </div>
         <div class="actions">
-          <input type="checkbox" [(ngModel)]="task.completed" (change)="handleChanges(task)" [disabled]="isProcessing"/>
+          <mat-checkbox [(ngModel)]="task.completed" (change)="handleChanges(task)" [disabled]="isProcessing"/>
         </div>
       </div>
     }
   </div>
-  <button type="button" class="btn btn-archive" (click)="archiveCompleted()" [disabled]="isProcessing">
-    {{ isProcessing ? 'Archiving...' : 'Archive Completed Tasks' }}
+  <button matButton="outlined" (click)="archiveCompleted()" [disabled]="!canArchiveCompleted()">
+    Archive Completed
   </button>
 </div>

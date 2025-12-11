@@ -3,11 +3,22 @@ import {Task} from '../task';
 import { TasksService } from '../tasks';
 import {FormsModule} from '@angular/forms';
 import {forkJoin, Observable} from 'rxjs';
+import {MatButton} from '@angular/material/button';
+import {MatCheckbox, MatCheckboxModule} from '@angular/material/checkbox';
+import {MatFormField, MatHint} from '@angular/material/form-field.d';
+import {MatLabel} from '@angular/material/form-field-module';
+import {MatInput} from '@angular/material/input';
 
 @Component({
   selector: 'app-tasks',
   imports: [
-    FormsModule
+    FormsModule,
+    MatButton,
+    MatCheckbox,
+    MatFormField,
+    MatLabel,
+    MatHint,
+    MatInput
   ],
   templateUrl: './tasks.html',
   styleUrl: './tasks.css',
@@ -66,4 +77,11 @@ export class Tasks implements OnInit {
    });
    }
 
+  canArchiveCompleted() {
+    return false
+  }
+
+  canAddTask() {
+    return false
+  }
 }

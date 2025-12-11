@@ -1,9 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbar} from '@angular/material/toolbar';
+import {MatChipListbox, MatChipOption} from '@angular/material/chips';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, MatToolbar, MatChipListbox, MatChipOption],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

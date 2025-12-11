@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
 import {TasksService} from '../tasks';
 import {Task} from '../task';
+import {MatIconButton} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @Component({
   selector: 'app-archive',
-  imports: [],
+  imports: [
+    MatIconButton,
+    MatIconModule
+
+
+  ],
   templateUrl: './archive.html',
   styleUrl: './archive.css',
   standalone: true
